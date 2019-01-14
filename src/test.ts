@@ -1,5 +1,3 @@
-import 'babel-polyfill'
-
 import stuft from './index'
 
 (async () => {
