@@ -83,3 +83,5 @@ interface IStuftOptions {
 interface IAggregateResponse {
   stories: IArticleArguments[];
 }
+
+export * from "./Section";
