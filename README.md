@@ -45,7 +45,7 @@ import stuft, { Section } from "stuft";
 
 ### Getting more than 5 articles
 ```javascript
-import stuft from "stuft";
+const stuft = require("stuft").default; // commonjs
 
 // Using async/await
 (async () => {
