@@ -4,14 +4,15 @@
   "description": "A news api.",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --watch",
-    "start": "node ./lib/test.js"
+    "build": "tsc"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^10.12.18",
     "tslint": "^5.12.1",
     "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.0"
   }
 }
