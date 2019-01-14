@@ -2,6 +2,12 @@
 
 A simple news API. Use at your own risk.
 
+## API
+
+The stuft module exposes one function that handles network requests and parsing. It returns a Promise, meaning you can also use the async/await syntax.
+
+You can call the `stuft` function with several options. You can mix these options except when `id` is present, then `limit` and `section` have no effect. Find out what `fetchOptions` you can pass in here: https://github.github.io/fetch/#options.
+
 ## Examples:
 
 ### Getting articles
