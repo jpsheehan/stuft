@@ -6,6 +6,10 @@ import {
   BASE,
 } from "./constants";
 
+/**
+ * Builds the URL for the request based on specific options.
+ * @param options The options used to build the URL.
+ */
 function buildUrl(options: IStuftOptions): URL {
   const { id, limit, section } = options;
   const url = new URL(BASE);
@@ -25,6 +29,10 @@ function buildUrl(options: IStuftOptions): URL {
   return url;
 }
 
+/**
+ * Parses the raw HTTP response and returns a list of articles.
+ * @param rawData The raw response.
+ */
 function parseResponse(rawData: string): Article[] {
   const parsedData = JSON.parse(rawData);
   const { stories } = parsedData;
@@ -36,6 +44,10 @@ function parseResponse(rawData: string): Article[] {
   }
 }
 
+/**
+ * Sends a request to retrieve a number of news articles.
+ * @param options The options used to request articles.
+ */
 export default function stuft(options: IStuftOptions = {}): Promise<Article[]> {
   return new Promise((resolve, reject) => {
     try {
