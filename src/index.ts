@@ -5,6 +5,7 @@ import {
   API_PATH,
   BASE,
 } from "./constants";
+import { Section } from "./Section";
 
 /**
  * Builds the URL for the request based on specific options.
@@ -84,5 +85,5 @@ export default function stuft(options: IStuftOptions = {}): Promise<Article[]> {
 interface IStuftOptions {
   id?: number;
   limit?: number;
-  section?: string;
+  section?: Section | string;
 }
