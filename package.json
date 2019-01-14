@@ -2,7 +2,7 @@
   "name": "stuft",
   "version": "1.0.0",
   "description": "A news api.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "tsc"
   },
