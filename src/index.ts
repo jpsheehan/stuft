@@ -11,20 +11,19 @@ import { Section } from "./Section";
  * Builds the URL for the request based on specific options.
  * @param options The options used to build the URL.
  */
-function buildUrl(options: IStuftOptions): URL {
+function buildUrl(options: IStuftOptions): string {
   const { id, limit, section } = options;
-  const url = new URL(BASE);
-
-  url.pathname = API_PATH;
+  let url = BASE;
+  url += API_PATH[0] === "/" ? API_PATH.slice(1) : API_PATH;
 
   if (id) {
-    url.pathname += "/" + id.toString();
+    url += "/" + id.toString();
   } else if (section) {
-    url.pathname += "/" + section;
+    url += "/" + section;
   }
 
   if (limit) {
-    url.searchParams.set("limit", limit.toString());
+    url += `?limit=${limit}`;
   }
 
   return url;
@@ -58,7 +57,7 @@ function parseSingletonResponse(json: IArticleArguments): Article {
 export default async function stuft(options: IStuftOptions = {}): Promise<Article[]> {
   const { id, fetchOptions } = options;
   const url = buildUrl(options);
-  const res = await fetch(url.toString(), fetchOptions);
+  const res = await fetch(url, fetchOptions);
 
   // check for errors
   if (res.status !== 200) {
