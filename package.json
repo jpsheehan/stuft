@@ -10,7 +10,7 @@
     "build": "tsc --watch"
   },
   "author": "JP Sheehan",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "tslint": "^5.12.1",
     "typescript": "^3.2.2"
