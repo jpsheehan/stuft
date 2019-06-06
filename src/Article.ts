@@ -6,6 +6,10 @@ import Video, { IVideoArguments } from "./Video";
  */
 export class Article {
 
+  public static parse(raw: any): Article {
+    return new Article(raw.json);
+  }
+
   private json: IArticleArguments;
 
   /**
@@ -104,7 +108,7 @@ export class Article {
    * Gets the images in the article.
    */
   get images(): Image[] {
-    return this.json.images.map((image) => new Image(image));
+    return this.json.images.map((image) => Image.parse(image));
   }
 
   /**

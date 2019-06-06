@@ -5,13 +5,20 @@ import Photo, { IPhotoArguments } from "./Photo";
  */
 export class Image {
 
+  public static parse(raw: any): Image {
+    if (raw.json) {
+      return new Image(raw.json);
+    }
+    return new Image(raw);
+  }
+
   private json: IImageArguments;
 
   /**
    * Creates a new instance of Image.
    * @param json The JSON object containing the information about the image.
    */
-  constructor(json: IImageArguments) {
+  constructor(json: any) {
     this.json = json;
   }
 
